@@ -18,7 +18,7 @@ following methods of Beal et al. (2016). Statistical analysis was conducted in R
 
 Format: all file formats are comma separted (.csv)
 
-All R code is available at ______ and details provided in this file.
+All R code is available at https://github.com/eageissinger/wrymouth and details provided in this file.
 
 Data:
 
