@@ -91,54 +91,28 @@ information on variables:
 -date_run: date the sample was run in the IRMS
 -season: season that sample was collected.
 
-The following files are output from the above raw data, and are used for stable isotope analysis in R (siar).
-
-title: wrymouth stable isotope signatures
-file name: consumer.csv
-date of data collection: 1-2 May 2013 and 21-22 August 2013
-method of data collection: see species_list.csv and wry_isotopes_full.csv
-information on variables:
--code: unique code identifier for siar analysis. 1 are samples from Larrabee Cove in the spring of 2013, 2 are samples from Larrabee Cove in the summer of 2013, 
-3 are samples from Mud Hole Cove in the spring of 2013, and 4 are samples from Mud Hole Cove in the summer of 2013.
--d15N: delta15Nitrogen signatures
--d13C: delta13Carbon signatures
-
-The final data file is an output from Rcode siar-analysis.R (see code description below):
-title: HDRS output
-file name: hrds.csv
-date of data collection: NA
-method of data collection: NA
-information on variables:
--parameter: cluster group (see cluster-trophic-position.R)
--group: group of wrymouth. 1 are samples from Larrabee Cove in the spring of 2013, 2 are samples from Larrabee Cove in the summer of 2013, 
-3 are samples from Mud Hole Cove in the spring of 2013, and 4 are samples from Mud Hole Cove in the summer of 2013.
--Low95hdr: lower 95% confidence interval
--High95hdr: upper 95% confidence interval
--mode: mode of proportion of diet
--mean: mean (average) of proportion of diet
-
 R code:
 
-data-format.R
+data-format_1.R
 This code is to format data for analysis. It is necessary to run this script before other scripts.
 
-temporal-spatial-change.R
+temporal-spatial-change_2.R
 This code is to analyze the spatial and temporal change in wrymouth isotope signatures, and other available species
 in the system.
 
-gut-contents.R
-This code is used to analyze changes in gut fullness across space and time for wrymouth.
+trophic-position_3.R
+This code calcuates trophic position for each food web.
 
-cluster-trophic-position.R
-This code uses heirarchical cluster analysis for each food web, and also calcuates trophic position for each food web.
+wrymouth-cluster_4.R
+This code is for cluster analysis for wrymouth isotopic signatures.
 
-siar-analysis.R
-This code uses output from cluster-trophic-position.R to determine diet proportions for wrymouth across two locations and seasons.
+full-cluster_5.R
+This code is for cluster analysis for the entire food web sampled.
 
-maine-map.R
+maine-map_6.R
 This is the code for the study site map. This code has no dependencies on other code.
 
-figures.R
+figures_7.R
 This is the code for all figures for our project. Analyses must be conducted prior to running this code (temporal-spatial-change.R,
 gut-contents.R, cluster-trophic-position.R, siar-analysis.R).
 
